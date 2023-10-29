@@ -4,6 +4,7 @@ import mongoose from "mongoose";
 interface iUser {
   name: string;
   email: string;
+  password: string;
   verified: boolean;
   OTP: string;
   token: string;
@@ -22,6 +23,9 @@ const userSchema = new mongoose.Schema<iUserData>(
       unique: true,
       trim: true,
       required: [true, "You must input an email"],
+    },
+    password: {
+      type: String,
     },
     verified: {
       type: Boolean,
