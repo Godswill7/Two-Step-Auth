@@ -1,15 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-
-interface iUser {
-  name: string;
-  email: string;
-  password: string;
-  verified: boolean;
-  OTP: string;
-  token: string;
-}
-
-interface iUserData extends iUser, mongoose.Document {}
+import { iUserData } from "../utils/Interface";
 
 const userSchema = new Schema<iUserData>(
   {

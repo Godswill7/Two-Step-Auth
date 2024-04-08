@@ -1,3 +1,5 @@
+import { Document } from "mongoose";
+
 export enum HTTP {
   CREATE = 201,
   BAD = 400,
@@ -12,3 +14,14 @@ export interface iError {
   success: boolean;
   status: HTTP;
 }
+
+interface iUser {
+  name: string;
+  email: string;
+  password: string;
+  verified: boolean;
+  OTP: string;
+  token: string;
+}
+
+export interface iUserData extends iUser, Document {}

@@ -23,6 +23,7 @@ export const mainApp = (app: Application) => {
     try {
       return res.status(HTTP.OK).json({
         message: "Welcome Home",
+        status:HTTP.OK
       });
     } catch (error: any) {
       console.error("An error occurred in the root route:", error);

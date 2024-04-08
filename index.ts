@@ -7,7 +7,6 @@ env.config();
 const port = parseInt(process.env.PORT!) || 3111;
 const app: Application = express();
 
-
 mainApp(app);
 
 const server = app.listen(process.env.PORT! || port, () => {
