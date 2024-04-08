@@ -1,23 +1,24 @@
 import { dbConnect } from "./config/Database";
 import express, { Application } from "express";
-import env from "dotenv";
 import { mainApp } from "./mainApp";
+import env from "dotenv";
 env.config();
 
-const port: number = parseInt(process.env.PORT!);
+const port = parseInt(process.env.PORT!) || 3111;
 const app: Application = express();
 
-const server = app.listen(process.env.PORT || port, () => {
-  console.log();
-  dbConnect();
-});
+
 mainApp(app);
+
+const server = app.listen(process.env.PORT! || port, () => {
+  dbConnect();
+}); 
 process.on("uncaughtException", (error: Error | any) => {
-  console.log("Error due to uncaughtException", error);
+  console.log("Error due to uncaughtException", error.message);
 });
 
-process.on("unhandledRejection", (reason: Error | any) => {
+process.on("unhandledRejection", (reason:Error | any) => {
   server.close(() => {
-    console.log("Error due to unhandledRejection", reason);
+    console.log("Error due to unhandledRejection", reason.message);
   });
 });

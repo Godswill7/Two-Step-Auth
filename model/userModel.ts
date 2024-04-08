@@ -1,5 +1,4 @@
-import { BooleanSchema } from "joi";
-import mongoose from "mongoose";
+import mongoose, { Schema, model } from "mongoose";
 
 interface iUser {
   name: string;
@@ -12,20 +11,20 @@ interface iUser {
 
 interface iUserData extends iUser, mongoose.Document {}
 
-const userSchema = new mongoose.Schema<iUserData>(
+const userSchema = new Schema<iUserData>(
   {
     name: {
       type: String,
-      required: [true, "You must input a name"],
+      required:true
     },
     email: {
       type: String,
       unique: true,
       trim: true,
-      required: [true, "You must input an email"],
     },
     password: {
       type: String,
+      required:true
     },
     verified: {
       type: Boolean,
@@ -43,5 +42,5 @@ const userSchema = new mongoose.Schema<iUserData>(
   }
 );
 
-const User = mongoose.model<iUserData>("users", userSchema);
+const User =  model<iUserData>("users", userSchema);
 export default User;

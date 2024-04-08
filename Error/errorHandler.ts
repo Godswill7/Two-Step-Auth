@@ -1,5 +1,6 @@
 import { NextFunction, Request, Response } from "express";
-import { HTTP, mainError } from "./mainError";
+import {mainError } from "./mainError";
+import { HTTP } from "../utils/Interface";
 
 const errFile = (err: mainError, res: Response) => {
   res.status(HTTP.BAD).json({

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head> 
+      <meta charset="UTF-8" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+     <title>Congratulation  on registering on our platform</title>
+  <style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+} 
+ 
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header, main, footer {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0; 
+ }
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Header Styles */
+header p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Main Content Styles */
+main p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+ol li {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Footer Styles */
+footer p {
+    font-size: 12px;
+    color: #888;
+    text-align: center;
+}
+
+footer strong {
+    font-weight: bold;
+    color: #333;
+}
+    </style>
+</head>
+
+<body> 
+     <div class="container"> 
+         <header>
+            <h1>Hello !</h1>
+            <p>We hope this message finds you well.</p>
+        </header>
+
+        <main>
+            <p>We are excited for you as you register on the platform:</p>
+             <ul>
+                 <% updates.forEach(update=> { %>
+                    <li>
+                        <%= update %>
+                    </li>
+                    <% }); %> 
+             </ul> 
+
+             <p>Before you get started, please take a moment to review the following rules and guidelines:</p>  
+             <ol>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+               Add more rules as needed 
+            </ol>
+
+            <p>If you have any questions or need further information, feel free to reach out to us.</p>  
+ 
+             <p>Thank you for being a part of our community.</p>
+        </main>
+
+        <footer>
+            <p>Your OTP: <strong>
+                    <%= otp %>
+                </strong></p>
+<br/> 
+ <br/>
+<br/>
+    <a href="<%= url %>">click here to input ur otp to verify</a>
+<br />
+<br />
+            <p>Best regards,<br> The [Your Company] Team</p>
+        </footer>
+     </div> 
+ </body> 
+</html>   
+
+ <body>
+    <div></div>
+    <br />
+    <br />
+    <div>Use the Link below to Activate your Account</div>
+
+    <br />
+    <br />
+    <br />
+    <a href="<%= url %>">Link to Activate your Account</a>
+</body>

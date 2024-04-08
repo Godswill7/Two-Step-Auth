@@ -43,12 +43,13 @@ export const sendMail = async (user: any) => {
       "code"
     );
 
-    const url = `http://localhost:1111/api`;
+    const url = `http://localhost:1122/api`;
     const choiceData = {
+    name : user.name,
       url: `${url}/${token}/verify`,
     };
 
-    const data = path.join(__dirname, "../views/FirstMailSent.ejs");
+    const data = path.join(__dirname, "../views/FirstMail.ejs");
     const realData = await ejs.renderFile(data, choiceData);
 
     const mailer = {
